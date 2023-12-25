@@ -1,21 +1,29 @@
-#!/bin/usr
-
 # compiler
-CC = g++
-CFLAGS =  
-LIBS =
-DEPS = ./include/core/*.h 
-SRC = pessoa.cpp
-OBJ = pessoa.o
+CXX := g++
 
+# diretórios
+INCDIR := ./include/core
+SRCDIR := ./src/core
+OBJDIR := ./obj/core
+BINDIR := ./bin
+INCDIR := ./
 
-programa: $(OBJ) $(CFLAGS)
-       $(CC) -o $@ $^ $(CFLAGS)
+# flags de compilação
+CXXFLAGS := -I$(INCDIR) -MMD
 
-$(DOBJ)/$(OBJ): $(DSRC)/$(SRC) $(DEPS)
-        $(CC) -c -o $@ $< $(CFLAGS)
+SRC := $(wildcard $(SRCDIR)/*.cpp)
+OBJ := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
+DEPS := $(OBJ:.o=.d)
 
+-include $(DEPS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+$(BINDIR)/programa: $(OBJ)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
 
 .PHONY: clean
 clean:
-	rm programa $(OBJ)
+	rm -f $(BINDIR)/programa $(OBJ) $(DEPS)
+

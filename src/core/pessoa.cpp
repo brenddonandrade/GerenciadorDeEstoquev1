@@ -5,13 +5,13 @@
 using namespace std;
 
 // implementacao
-#include "../../include/pessoa.h"
+#include "../../include/core/pessoa.h"
 
 
 	// implementacoes
 	
 	//construtor e deestrutor
-	Pessoa::Pessoa(string nome, int cpf, int fone){
+	Pessoa::Pessoa(string nome, string cpf, string fone){
 		setNome(nome);
 		setCpf(cpf);
 		setFone(fone);
@@ -22,12 +22,12 @@ using namespace std;
 
 	//acessadores e modificadores
 	string Pessoa::getNome(){ return nome;}
-	int Pessoa::getCpf(){ return cpf; }
-	int Pessoa::getFone() { return cpf; }
+	string Pessoa::getCpf(){ return cpf; }
+	string Pessoa::getFone() { return cpf; }
 
 	void Pessoa::setNome(string nome) { nome = nome ; }
-	void Pessoa::setCpf(int cpf) { cpf = cpf; }
-	void Pessoa::setFone(int fone) { fone = fone; }
+	void Pessoa::setCpf(string cpf) { cpf = cpf; }
+	void Pessoa::setFone(string fone) { fone = fone; }
 
 	void Pessoa::mostra() { 
 		cout 	<< "Nome: " << getNome() << endl

@@ -5,16 +5,12 @@ using namespace std;
 
 
 // Arquivos implementados
-#include "pessoa.h"
-
+#include "../../include/core/main.h"
 
 
 int main() {
 
-	Pessoa p1("Brenddon Olvieira", 18106747786, 5524993287919);
-
-	p1.mostra();
-
+	inicialize();
 	return 0;
 
 }

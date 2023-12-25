@@ -3,24 +3,25 @@
 
 class Pessoa {
 	private:
-		string nome;
-		int cpf, fone;
+		string nome, cpf, fone;
 	
 	public:
 		// Construtor
-		Pessoa(string, int, int);
+		Pessoa(string, string, string);
 		
 		// Destrutores
 		~Pessoa();
 
 		// getters
 		string getNome();
-		int getCpf();
-		int getFone();
+		string getCpf();
+		string getFone();
 
 		// settes
 		void setNome(string);
-		void setCpf(int);
-		void setFone(int);
+		void setCpf(string);
+		void setFone(string);
+
+		void mostra();
 };
 #endif

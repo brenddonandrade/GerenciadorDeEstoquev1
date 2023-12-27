@@ -1,15 +1,10 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <iostream>
-#include <string>
-
 #include "pessoa.h"
 
 void inicialize(){
-
-	Pessoa p1("Brenddon Olvieira", "18106747786", "5524993287919");
-
+	Pessoa p1("Brenddon", "12334", "12345677");
         p1.mostra();
+	
+	return;
 }
-#endif
+
+

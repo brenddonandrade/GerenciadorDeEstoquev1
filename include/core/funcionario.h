@@ -7,14 +7,18 @@ class Funcionario:public Pessoa{
 		string data_admissao;
 	
 	public:
-		Funcionario(int, string, string, string, string, string, string, string, string, string, int);
+		Funcionario(bool, string, int, string, string, string, string, string, string, string, string, string, int);
 		~Funcionario();
 
 		// getters
+		bool getStatus();
+		string getFuncao();
 		int getMatricula();
 		string getDataAdmissao();
 
 		// setters
+		void setStatus(bool);
+		void setFuncao(string);
 		void setMatricula(int);
 		void setDataAdmissao(string);
 

@@ -25,9 +25,9 @@ using namespace std;
 	string Pessoa::getCpf(){ return cpf; }
 	string Pessoa::getFone() { return cpf; }
 
-	void Pessoa::setNome(string nome) { nome = nome ; }
-	void Pessoa::setCpf(string cpf) { cpf = cpf; }
-	void Pessoa::setFone(string fone) { fone = fone; }
+	void Pessoa::setNome(string let_nome) { nome = let_nome ; }
+	void Pessoa::setCpf(string let_cpf) { cpf = let_cpf; }
+	void Pessoa::setFone(string let_fone) { fone = let_fone; }
 
 	void Pessoa::mostra() { 
 		cout 	<< "Nome: " << getNome() << endl

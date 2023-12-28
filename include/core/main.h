@@ -1,3 +1,9 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <string>
+using namespace std;
+
 #include "pessoa.h"
 
 void inicialize(){
@@ -5,6 +11,7 @@ void inicialize(){
         p1.mostra();
 	
 	return;
-}
+};
+#endif
 
 

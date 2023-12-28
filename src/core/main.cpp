@@ -5,7 +5,6 @@ using namespace std;
 
 
 // Arquivos implementados
-#include "../../include/core/pessoa.h"
 #include "../../include/core/main.h"
 
 int main() {

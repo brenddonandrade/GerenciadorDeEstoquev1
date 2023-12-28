@@ -1,3 +1,3 @@
-obj/core/main.o: src/core/main.cpp src/core/../../include/core/main.h \
+obj/core/funcionario.o: src/core/funcionario.cpp \
  src/core/../../include/core/pessoa.h \
  src/core/../../include/core/funcionario.h

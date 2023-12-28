@@ -6,26 +6,38 @@ using namespace std;
 
 class Pessoa {
 	private:
-		string nome;
-		string cpf;
-	       	string fone;
+		string nome, data_nascimento, nome_pai, nome_mae, naturalidade,\
+			identidade, cpf, fone;
+		int idade;
 	
 	public:
 		// Construtor
-		Pessoa(string, string, string);
+		Pessoa(string, string, string, string, string, string, string, string, int);
 		
 		// Destrutores
 		~Pessoa();
 
 		// getters
 		string getNome();
+		string getDataNascimento();
+		string getNomePai();
+		string getNomeMae();
+		string getNaturalidade();
+		string getIdentidade();
 		string getCpf();
 		string getFone();
+		int getIdade();
 
 		// settes
 		void setNome(string);
+		void setDataNascimento(string);
+		void setNomePai(string);
+		void setNomeMae(string);
+		void setNaturalidade(string);
+		void setIdentidade(string);
 		void setCpf(string);
 		void setFone(string);
+		void setIdade(int);
 
 		void mostra();
 };

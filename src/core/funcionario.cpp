@@ -5,12 +5,14 @@ using namespace std;
 #include "../../include/core/pessoa.h"
 #include "../../include/core/funcionario.h"
 
-	Funcionario::Funcionario(int matricula, string data_admissao, string nome, string data_nascimento,\
-			string nome_pai, string nome_mae, string naturalidade, string identidade, \
-			string cpf, string fone, int idade):Pessoa(nome, data_nascimento, nome_pai, nome_mae,\
-				naturalidade, identidade, cpf, fone, idade) {
-				setMatricula(matricula);
-				setDataAdmissao(data_admissao);
+	Funcionario::Funcionario(bool status, int matricula, string dataAdmissao, string funcao, float salario, string nome, string dataNascimento,\
+			string nomePai, string nomeMae, string naturalidade, string identidade, \
+			string cpf, string fone, int idade):Pessoa(nome, dataNascimento, nomePai, nomeMae,\
+				naturalidade, identidade, cpf, fone, idade), MATRICULA(matricula) {
+				setStatus(status);
+				setFuncao(funcao);
+				setDataAdmissao(dataAdmissao);
+				setSalario(salario);
 			}
 	Funcionario::~Funcionario(){
 		cout << "Funcionario " << getNome() << " de matricula " << getMatricula() << " foi destruido\n" << endl;
@@ -18,15 +20,25 @@ using namespace std;
 
 	
 	// getters
-	int Funcionario::getMatricula(){ return matricula; }
-	string Funcionario::getDataAdmissao() { return data_admissao; }
+	bool Funcionario::getStatus() { return status; }
+	string Funcionario::getFuncao() { return funcao; }
+	int Funcionario::getMatricula() const{ return MATRICULA; }
+	string Funcionario::getDataAdmissao() { return dataAdmissao; }
+	float Funcionario::getSalario() { return salario; }
 
 	// setters
-	void Funcionario::setMatricula(int let_matricula) { matricula = let_matricula ; }
-	void Funcionario::setDataAdmissao(string let_data_admissao) { data_admissao = let_data_admissao; }
+	void Funcionario::setStatus(bool letStatus) { status = letStatus; }
+	void Funcionario::setFuncao(string letFuncao) { funcao = letFuncao; }
+	void Funcionario::setDataAdmissao(string letDataAdmissao) { dataAdmissao = letDataAdmissao; }
+	void Funcionario::setSalario(float letSalario ) { salario = letSalario; }
 	
+	// Metodos membros
 	void Funcionario::mostra() {
 		cout 	<< "Nome: " << getNome() << endl
+			if (getStatus())
+				<< "Funcionário ativo" << endl
+			else
+				<< "Funcionário inativo" << endl
 			<< "Matricula: " << getMatricula() << endl
 			<< "Admissao: " << getDataAdmissao() << endl
 			<< "Idade: " << getIdade() << endl

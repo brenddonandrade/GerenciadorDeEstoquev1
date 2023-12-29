@@ -5,10 +5,7 @@ using namespace std;
 #include "../../include/core/pessoa.h"
 #include "../../include/core/funcionario.h"
 
-	Funcionario::Funcionario(bool status, int matricula, string dataAdmissao, string funcao, float salario, string nome, string dataNascimento,\
-			string nomePai, string nomeMae, string naturalidade, string identidade, \
-			string cpf, string fone, int idade):Pessoa(nome, dataNascimento, nomePai, nomeMae,\
-				naturalidade, identidade, cpf, fone, idade), MATRICULA(matricula) {
+	Funcionario::Funcionario(bool status, const int matricula, string dataAdmissao, string funcao, float salario, string nome, string dataNascimento, string nomePai, string nomeMae, string naturalidade, string identidade,string cpf, string fone, int idade):Pessoa(nome, dataNascimento, nomePai, nomeMae, naturalidade, identidade, cpf, fone, idade), MATRICULA(matricula) {
 				setStatus(status);
 				setFuncao(funcao);
 				setDataAdmissao(dataAdmissao);
@@ -34,12 +31,12 @@ using namespace std;
 	
 	// Metodos membros
 	void Funcionario::mostra() {
-		cout 	<< "Nome: " << getNome() << endl
+		cout 	<< "Nome: " << getNome() << endl;
 			if (getStatus())
-				<< "Funcionário ativo" << endl
+				cout << "Funcionário ativo" << endl;
 			else
-				<< "Funcionário inativo" << endl
-			<< "Matricula: " << getMatricula() << endl
+				cout << "Funcionário inativo" << endl;
+		cout 	<< "Matricula: " << getMatricula() << endl
 			<< "Admissao: " << getDataAdmissao() << endl
 			<< "Idade: " << getIdade() << endl
 			<< "Data de Nascimento: " << getDataNascimento() << endl

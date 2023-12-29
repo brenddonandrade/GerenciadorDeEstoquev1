@@ -18,11 +18,12 @@ using namespace std;
 #include "../../include/core/vendedor.h"
 #include "../../include/core/produto.h"
 #include "../../include/core/main.h"
+#include "../../include/utils/mensagem_boas_vindas.h"
 
 
 
 void inicialize() {
-	
+	mensagem();	
 }
 
 int main() {

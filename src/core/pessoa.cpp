@@ -11,9 +11,7 @@ using namespace std;
 	// implementacoes
 	
 	//construtor e deestrutor
-	Pessoa::Pessoa(string nome, string dataNascimento, string nomePai, string nomeMae, string naturalidade, string identidade,\
-			string cpf, string fone, int idade):NOME(nome), DATANASCIMENTO(dataNascimento), NOMEPAI(nomePai),\
-			NOMEMAE(nomeMae), NATURALIDADE(naturalidade), IDENTIDADE(identidade), CPF(cpf) {
+	Pessoa::Pessoa(string nome, string dataNascimento, string nomePai, string nomeMae, string naturalidade, string identidade,string cpf, string fone, int idade):NOME(nome), DATANASCIMENTO(dataNascimento), NOMEPAI(nomePai), NOMEMAE(nomeMae), NATURALIDADE(naturalidade), IDENTIDADE(identidade), CPF(cpf) {
 		setFone(fone);
 		setIdade(idade);
 	}

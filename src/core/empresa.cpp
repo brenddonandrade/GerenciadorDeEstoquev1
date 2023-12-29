@@ -2,13 +2,14 @@
 #include <string>
 using namespace std;
 
+#include "../../include/core/pessoa.h"
 #include "../../include/core/funcionario.h"
 #include "../../include/core/cliente.h"
 #include "../../include/core/empresa.h"
 
 	Empresa::Empresa(int numeroDeFuncionarios, int numeroDeClientes, double capital, const string cnpj, string nomeFantasia, \
 			string regimeTributario, string endereco, string fone, string email):CNPJ(cnpj){
-		setNumeroDeFuncionarios(numeroDeFuncionario);
+		setNumeroDeFuncionarios(numeroDeFuncionarios);
 		setNumeroDeClientes(numeroDeClientes);
 		setCapital(capital);
 		setNomeFantasia(nomeFantasia);
@@ -35,7 +36,7 @@ using namespace std;
 	string Empresa::getEmail() { return email; }
 
 	//setters
-	void Empresa::setNumeroDeFuncionario(int letNumeroDeFuncionario) { numeroDeFuncionario = letNumeroDeFuncionario; }
+	void Empresa::setNumeroDeFuncionarios(int letNumeroDeFuncionarios) { numeroDeFuncionarios = letNumeroDeFuncionarios; }
 	void Empresa::setNumeroDeClientes(int letNumeroDeClientes) { numeroDeClientes = letNumeroDeClientes; }
 	void Empresa::setCapital(double letCapital) { capital = letCapital; }
 	void Empresa::setNomeFantasia(string letNomeFantasia) { nomeFantasia = letNomeFantasia; }

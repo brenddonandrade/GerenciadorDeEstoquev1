@@ -3,24 +3,27 @@
 
 class Funcionario:public Pessoa{
 	private:
-		int matricula;
-		string data_admissao;
+		bool status;
+		const int MATRICULA;
+		string dataAdmissao, funcao;
+		float salario;
 	
 	public:
-		Funcionario(bool, string, int, string, string, string, string, string, string, string, string, string, int);
+		Funcionario(bool, int, string, string, float, string, string, string, string, string, string, string, string, string, int);
 		~Funcionario();
 
 		// getters
 		bool getStatus();
+		int getMatricula() const;
 		string getFuncao();
-		int getMatricula();
 		string getDataAdmissao();
+		float getSalario();
 
 		// setters
 		void setStatus(bool);
 		void setFuncao(string);
-		void setMatricula(int);
 		void setDataAdmissao(string);
+		void setSalario(float);
 
 		// membros
 		void mostra();

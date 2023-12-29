@@ -5,20 +5,22 @@ class Funcionario;
 class Clientes;
 
 class Empresa {
-	private:
-		int numeroDeFucionario;
+	protected:
+		int numeroDeFucinarios, numeroDeClientes;
 		double capital;
-		string cnpj, nomeFantasia, regimeTributario, endereco, fone, email;
+		const string CPNJ;
+		string nomeFantasia, regimeTributario, endereco, fone, email;
 	
 	public:
 		// Construtor e destrutor
-		Empresa(int, double, string, string, string, string, string);
+		Empresa(int, int,  double, string,  string, string, string, string, string);
 		~Empresa();
 
 		//getters
-		int getNumeroDeFuncionario();
+		int getNumeroDeFuncionarios();
+		int getNumeroDeClientes();
 		double getCapital();
-		string getCnpj();
+		string getCnpj() const();
 		string getNomeFantasia();
 		string getRegimeTributario();
 		string getEndereco();
@@ -26,9 +28,9 @@ class Empresa {
 		string getEmail();
 
 		//setters
-		void setNumeroDeFuncionario(int);
+		void setNumeroDeFuncionarios(int);
+		void setNumeroDeClientes(int);
 		void setCapital();
-		void setCpnj();
 		void setNomeFantasia(string);
 		void setRegimeTributario(string);
 		void setEndereco(string);
@@ -38,6 +40,7 @@ class Empresa {
 		// declarando classe amiga
 		friend class Gerente;
 		friend class SubGerente;
+		friend class Vendedor;
 
 		// membros
 		friend bool adicionarFuncionario(Funcionario);

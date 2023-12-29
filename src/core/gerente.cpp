@@ -26,16 +26,18 @@ using namespace std;
 	// membros
 	bool Gerente::adicionaFuncionario(Empresa e){
 		string nome, dataNascimento, nomePai, nomeMae, naturalidade, identidade,\
-			cpf, fone, funcao, dataAdmissao;
+			cpf, fone, dataAdmissao;
 		int idade, matricula;
 		float salario; 
 		bool status;
-		int continuacao;
+		bool sucesso = false;
+		int continuacao, tentativas=0, funcao;
 
 		cout << "Bem vindo ao processo de inclusão de um Funcionário\n\
 			Digite as informações necessárias para esta tarefa. Elas são:\
 			1)Nome\n2)Data de Nascimento\n3)Nome do pai\n4)Nome da mãe\n\
-			5)Naturalidade\n6)Identidade\n7)" << "\nDeseja prosseguir com\
+			5)Naturalidade\n6)Identidade\n7)CPF\n8)Telefone\n9)Função\n\
+			10)Salário" << "\nDeseja prosseguir com\
 			esta tarefa?\n1. Sim\n2. Não" << endl;
 
 		cin >> continuacao;
@@ -64,8 +66,11 @@ using namespace std;
 		cin >> fone; 
 		cout << "\nIdade";
 		cin >> idade;
-		cout << "\nFunção: ";
+		cout << "\nFunção: " << endl;
+		cout << "Opções: 1)administrador\n2)estoquista\n3)marketeiro\n\
+			4)subgerente\n5)ti\n6)vendedor\nOpção: ";
 		cin >> funcao;
+		
 		cout << "\nMatricula: ";
 		cin >> matricula;
 		cout << "Salario: ";
@@ -73,7 +78,53 @@ using namespace std;
 		dataAdmissao = dataAtual();
 		cout << "\nStatus: ";
 		cin >> status;
-			
 
-			
+		do { 
+			switch (funcao){
+				case 1:
+			       		cout << "Adicionando um administrador." << endl;
+					sucesso = true;
+					return True;
+				       	break;
 
+				case 2:
+					cout << "Adicionando estoquista." << endl;
+					sucesso = true;
+					return True;
+					break;
+	
+				case 3:
+					sucesso = true;
+					cout << "Adicionando um marketeiro." << endl;
+					return True;
+					break;
+			
+				case 4:
+					cout << "Adicionando um subgerente." << endl;
+					sucesso = true;
+					return True;
+					break;
+
+				case 5:
+					cout << "Adicionando um ti." << endl;
+					sucesso = true;
+					return True;
+					break;
+	
+				case 6:
+					cout << "Adicionando um vendedor." << endl;
+					sucesso = true;
+					return True;
+					break;
+
+				default:
+					cout << "Opção inválida. Recomece o processo." << endl;
+					tentativas++;
+					if (tentativas > 2){
+						sucesso = True;
+						cout << "3 tentativas inválidas. Cancelando processo." << endl;
+						return false;
+					}
+					break;
+		}while (sucesso);
+	}

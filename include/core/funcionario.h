@@ -9,7 +9,7 @@ class Funcionario:public Pessoa{
 		float salario;
 	
 	public:
-		Funcionario(bool, int, string, string, float, string, string, string, string, string, string, string, string, string, int);
+		Funcionario(bool, const int, string, string, float,const string, const string,const string, const string,const string, const string,const string, string, int);
 		~Funcionario();
 
 		// getters

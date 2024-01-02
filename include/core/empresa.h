@@ -1,15 +1,33 @@
 #ifndef EMPRESA_H
 #define EMPRESA_H
+#include <vector>
 
-class Funcionario;
-class Clientes;
+using namespace std;
+
+class Cliente;
+//class Ti;
+//class Estoquista;
+class Gerente;
+//class SubGerente;
+//class Vendedor;
+//class Produtos;
+
 
 class Empresa {
 	protected:
-		int numeroDeFucinarios, numeroDeClientes;
+		// padrao
+		int numeroDeFuncionarios, numeroDeClientes;
 		double capital;
-		const string CPNJ;
+		const string CNPJ;
 		string nomeFantasia, regimeTributario, endereco, fone, email;
+
+		// criados
+		vector <Cliente*> Clientes;
+		//Ti tis[2];
+		//Estoquista estoquistas[2];
+		vector <Gerente*> gerente;
+		//SubGerente subgerente;
+		//Vendedor vendedores[2];
 	
 	public:
 		// Construtor e destrutor
@@ -20,7 +38,7 @@ class Empresa {
 		int getNumeroDeFuncionarios();
 		int getNumeroDeClientes();
 		double getCapital();
-		string getCnpj() const();
+		string getCnpj() const;
 		string getNomeFantasia();
 		string getRegimeTributario();
 		string getEndereco();
@@ -30,7 +48,7 @@ class Empresa {
 		//setters
 		void setNumeroDeFuncionarios(int);
 		void setNumeroDeClientes(int);
-		void setCapital();
+		void setCapital(double);
 		void setNomeFantasia(string);
 		void setRegimeTributario(string);
 		void setEndereco(string);
@@ -39,12 +57,17 @@ class Empresa {
 
 		// declarando classe amiga
 		friend class Gerente;
-		friend class SubGerente;
-		friend class Vendedor;
+		//friend class SubGerente;
+		//friend class Vendedor;
 
 		// membros
-		friend bool adicionarFuncionario(Funcionario);
-		friend bool adicionarCliente(Cliente);
+		//friend bool adicionarFuncionario(Administrador);
+		//friend bool adicionarFuncionario(Estoquista);
+		//friend bool adicionarFuncionario(Gerente);
+		//friend bool adicionarFuncionario(SubGerente);
+		//friend bool adicionarFuncionario(Ti);
+		//friend bool adicionarFuncionario(Vendedor);
+		//friend bool adicionarCliente(Cliente);
 
 
 };

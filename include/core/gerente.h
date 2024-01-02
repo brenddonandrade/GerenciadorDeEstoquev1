@@ -9,8 +9,7 @@ class Gerente:public Funcionario {
 		float meta;
 
 	public:
-		Gerente(float, bool, int , string, string, float, string, string, string, string, int);
-		~Gerente();
+		Gerente(float, bool, const int, string, string, float,const string, const string,const string, const string, const string, const string,const string, string, int);
 
 		//getters
 		float getMeta();
@@ -19,6 +18,7 @@ class Gerente:public Funcionario {
 		void setMeta(float);
 
 		// membros
-		bool adicionaFuncionario(Empresa, Funcionario);
+		bool adicionaFuncionario(Empresa);
 
-
+};
+#endif
